@@ -9,6 +9,32 @@
 	console.log("Geo location support:" + Modernizr.geolocation);
 	console.log("Web sockets support:" + Modernizr.websockets);
 </script>
+
+<style type="text/css">
+a[href^='https'] {
+	color: red;
+}
+
+a[href$='pdf'] {
+	color: green;
+}
+
+article>section:first-child>header {
+	background-color: yellow;
+	height: 200px;
+	border: 1px solid blue;
+	border-radius: 15px;
+	text-align: center;
+	
+	margin: 20px;
+	box-shadow: 15px 10px 5px gray;
+	text-shadow: 15px 10px 5px blue;
+}
+
+span {
+	line-height: 200px;
+}
+</style>
 </head>
 <body>
 	<header>
@@ -20,15 +46,21 @@
 			<ul>
 				<li><a href="#storage">Storage</a></li>
 			</ul>
+			<ul>
+				<li><a href="https://www.google.com">Login</a></li>
+			</ul>
+			<ul>
+				<li><a href="http://www.google.com?pdf">Documentation</a></li>
+			</ul>
 		</nav>
 	</header>
 	<article>
 		<section>
 			<header>
 				<div>
-					This is an
-					<mark>HTML5</mark>
-					training.
+					<span>This is an <mark>HTML5</mark> training.
+					</span>
+
 				</div>
 			</header>
 			<div>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Media Query</title>
+<style type="text/css">
+.wrapper {
+	border: 1px solid blue;
+	margin: 10px;
+	padding: 10px;
+}
+
+.wrapper > span {
+	visibility: hidden;
+}
+
+@media screen and (max-width:400px){
+	.one{
+		background-color:yellow;
+	}
+	
+	.one > span {
+		visibility: visible;
+	}
+}
+
+@media screen and (min-width:400px) and (max-width:900px) {
+	.two{
+		background-color:green;
+	}
+	
+	.two > span {
+		visibility: visible;
+	}
+}
+
+@media screen and (min-width:900px){
+	.three{
+		background-color:aqua;
+	}
+	
+	.three > span {
+		visibility: visible;
+	}
+}
+
+</style>
+</head>
+<body>
+	<h2>Media Query</h2>
+	<div class="wrapper one">
+		<p>This is a media query example 1</p>
+		<span> Viewed on width upto 600px </span>
+	</div>
+
+	<div class="wrapper two">
+		<p>This is a media query example 2</p>
+		<span> Viewed on width upto 600px and 900px </span>
+	</div>
+
+	<div class="wrapper three">
+		<p>This is a media query example 3</p>
+		<span> Viewed on width upto above 900px </span>
+	</div>
+</body>
+</html>
