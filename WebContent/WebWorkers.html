@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Web Worker</title>
+<script type="text/javascript">
+	function execute() {
+		var worker = new Worker("js/task.js");
+
+		worker.addEventListener("message", function(event) {
+			alert("Result:" + event.data);
+		}, false);
+
+		worker.postMessage("t1");
+	}
+</script>
+</head>
+<body>
+	<h2>Web Workers</h2>
+	<div>
+		<p>
+			<input type="text" placeholder="Message">
+		</p>
+		<p>
+			<button onclick="execute()">Execute</button>
+		</p>
+	</div>
+</body>
+</html>

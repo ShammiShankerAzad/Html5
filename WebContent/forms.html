@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Forms</title>
+<style type="text/css">
+input:invalid+span {
+	visibility: visible;
+	color: red;
+}
+
+input:valid+span {
+	visibility: hidden;
+}
+
+input:invalid {
+	border-color: red;
+}
+
+input:valid {
+	border-color: green;
+}
+</style>
+<script src="js/contactsDB.js" type="text/javascript"></script>
+
+<script src="js/formvalidate.js" type="text/javascript"></script>
+</head>
+<body onload="load()" >
+	<header>
+		<h2>New Forms</h2>
+	</header>
+	<article>
+		<form>
+			<fieldset>
+				<p>
+					<label for="name">Name</label>
+				</p>
+				<div>
+					<input type="text" id="name" required pattern="[a-zA-Z]{2,}"
+						autofocus> <span>This will only contains alphabet</span>
+				</div>
+
+				<p>
+					<label for="email">Email</label>
+				</p>
+				<div>
+					<input type="text" id="email" autofocus>
+				</div>
+
+				<p>
+					<label for="companyUrl">URL</label>
+				</p>
+				<div>
+					<input type="url" id="companyUrl">
+				</div>
+
+				<p>
+					<label for="dob">Date of Birth</label>
+				</p>
+				<div>
+					<input type="date" id="dob">
+				</div>
+
+				<input type="submit" value="Save" onclick="saveUser()" />
+
+			</fieldset>
+		</form>
+	</article>
+</body>
+</html>

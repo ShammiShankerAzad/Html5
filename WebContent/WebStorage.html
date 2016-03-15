@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Web Storage</title>
+
+<script type="text/javascript">
+	function saveTasks() {
+		if (window.localStorage) {
+			var tasksDiv = document.getElementById("tasksDiv");
+			localStorage.setItem("myTasks", tasksDiv.innerHTML);
+			alert("task saved");
+		}
+	}
+
+	function reloadPreviousData() {
+		if (window.localStorage) {
+			var value = localStorage.getItem("myTasks");
+			tasksDiv.innerHTML = value;
+
+			window.addEventListener("storage", function(event) {
+				console.log(event)
+
+				if (event.key == "myTasks") {
+					tasksDiv.innerHTML = event.newValue;
+				}
+
+			}, false);
+		}
+	}
+</script>
+</head>
+<body onload="reloadPreviousData()">
+	<h2>Web Storage</h2>
+	<p>Tasks</p>
+
+	<div id="tasksDiv"
+		style="height: 200px; width: 150px; border: 1px solid blue"
+		contenteditable="true"></div>
+	<p>
+		<button onclick="saveTasks()">Save</button>
+	</p>
+</body>
+</html>
